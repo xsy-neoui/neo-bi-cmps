@@ -1,0 +1,160 @@
+.targetNumber__c {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .target-number-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+
+    &.flex-col {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &.flex-col-reverse {
+      flex-direction: column-reverse;
+      gap: 8px;
+    }
+
+    &.flex-row {
+      flex-direction: row;
+      gap: 12px;
+    }
+
+    &.flex-row-reverse {
+      flex-direction: row-reverse;
+      gap: 12px;
+    }
+
+    // 多字段模式
+    &.multiple-fields {
+      align-items: stretch;
+      justify-content: flex-start;
+    }
+  }
+
+  // 多字段列表容器
+  .target-number-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      gap: 12px;
+    }
+
+    @media (max-width: 576px) {
+      gap: 8px;
+    }
+  }
+
+  // 单个数值项
+  .target-number-item {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: #fafafa;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #f0f0f0;
+    }
+
+    &.flex-col {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &.flex-col-reverse {
+      flex-direction: column-reverse;
+      gap: 8px;
+    }
+
+    &.flex-row {
+      flex-direction: row;
+      gap: 12px;
+    }
+
+    &.flex-row-reverse {
+      flex-direction: row-reverse;
+      gap: 12px;
+    }
+
+    @media (max-width: 576px) {
+      padding: 8px;
+      min-width: calc(50% - 4px);
+    }
+  }
+
+  .target-number-value {
+    font-size: 32px;
+    font-weight: 600;
+    color: #262626;
+    line-height: 1.2;
+    word-break: break-all;
+    text-align: center;
+  }
+
+  .target-number-label {
+    font-size: 14px;
+    color: #8c8c8c;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .target-number-loading {
+    color: #8c8c8c;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .target-number-error {
+    color: #ff4d4f;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .target-number-empty {
+    color: #8c8c8c;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+  }
+
+  // 响应式设计
+  @media (max-width: 768px) {
+    padding: 12px;
+
+    .target-number-value {
+      font-size: 28px;
+    }
+
+    .target-number-label {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 10px;
+
+    .target-number-value {
+      font-size: 24px;
+    }
+
+    .target-number-label {
+      font-size: 12px;
+    }
+  }
+}
