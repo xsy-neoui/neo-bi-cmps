@@ -1,6 +1,7 @@
 /**
  * 用于定制组件的样式配置
- * 备注：使用 JSONEditor 渲染配置内容
+ * 备注：使用 JSONEditor 渲染配置内容。
+ * 说明：以下 configSchema 可使用 JSONSchemaEditor 生成。使用方式见 https://github.com/wibetter/json-editor。
  */
 export const configSchema = {
   "type": "object",
@@ -10,7 +11,7 @@ export const configSchema = {
     "baseStyle": {
       "type": "object",
       "title": "基础样式",
-      "isFixed": true,
+      "isFixed": false,
       "properties": {
         "backgroundColor": {
           "type": "color",
@@ -75,7 +76,7 @@ export const configSchema = {
     "layoutStyle": {
       "type": "object",
       "title": "布局配置",
-      "isFixed": true,
+      "isFixed": false,
       "properties": {
         "legendOrient": {
           "type": "radio",
@@ -152,7 +153,7 @@ export const configSchema = {
         },
         "fontWeight": {
           "type": "number",
-          "title": "标题字钟",
+          "title": "标题字重",
           "default": 400,
           "minimum": 0,
           "maximum": 1000,
@@ -178,7 +179,7 @@ export const configSchema = {
     "numberStyle": {
       "type": "object",
       "title": "数值样式",
-      "isFixed": true,
+      "isFixed": false,
       "properties": {
         "fontSize": {
           "type": "number",
@@ -191,7 +192,7 @@ export const configSchema = {
         },
         "fontWeight": {
           "type": "number",
-          "title": "标题字钟",
+          "title": "标题字重",
           "default": 800,
           "minimum": 0,
           "maximum": 1000,
@@ -223,7 +224,7 @@ export const configSchema = {
     "numberTitleStyle": {
       "type": "object",
       "title": "数值标题样式",
-      "isFixed": true,
+      "isFixed": false,
       "properties": {
         "fontSize": {
           "type": "number",
@@ -236,7 +237,7 @@ export const configSchema = {
         },
         "fontWeight": {
           "type": "number",
-          "title": "标题字钟",
+          "title": "标题字重",
           "default": 400,
           "minimum": 0,
           "maximum": 1000,

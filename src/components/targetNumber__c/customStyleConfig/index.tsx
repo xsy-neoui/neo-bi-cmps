@@ -8,7 +8,7 @@ import JSONEditor from '@wibetter/json-editor';
 import '@wibetter/json-editor/lib/index.css';
 
 import { configSchema } from './configSchema';
-import './customConfig.scss';
+import './index.scss';
 
 interface ICustomStyleConfigProps {
   onChange?: Function;
