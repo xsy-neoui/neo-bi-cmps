@@ -29,7 +29,6 @@ export default class CustomStyleConfigRenderer extends React.Component<
   RendererProps & ICustomStyleConfigProps,
   ICustomStyleConfigState
 > {
-
   constructor(props: RendererProps & ICustomStyleConfigProps) {
     super(props);
 
@@ -42,17 +41,6 @@ export default class CustomStyleConfigRenderer extends React.Component<
     this.handleModalOk = this.handleModalOk.bind(this);
     this.handleModalCancel = this.handleModalCancel.bind(this);
     this.handleEditorChange = this.handleEditorChange.bind(this);
-  }
-
-  componentDidMount() {
-    const value = this.props.value || {};
-    this.setState({ editorValue: value });
-  }
-
-  componentWillReceiveProps(nextProps: RendererProps & ICustomStyleConfigProps) {
-    if (nextProps.value !== this.props.value) {
-      this.setState({ editorValue: nextProps.value || {} });
-    }
   }
 
   handleEditorChange = (value: any) => {
@@ -74,17 +62,17 @@ export default class CustomStyleConfigRenderer extends React.Component<
   handleModalCancel = () => {
     // 取消时恢复原始值
     const value = this.props.value || {};
-    this.setState({ 
+    this.setState({
       isModalVisible: false,
-      editorValue: value 
+      editorValue: value,
     });
   };
 
   showModal = () => {
     const value = this.props.value || {};
-    this.setState({ 
+    this.setState({
       isModalVisible: true,
-      editorValue: value 
+      editorValue: value,
     });
   };
 
@@ -99,8 +87,8 @@ export default class CustomStyleConfigRenderer extends React.Component<
   };
 
   render() {
-    const { disabled, viewStyle, wideScreen } = this.props;
-    const { isModalVisible, editorValue } = this.state;
+    const { disabled, viewStyle, wideScreen, value } = this.props;
+    const { isModalVisible } = this.state;
 
     return (
       <div className="properties-panel-custom-style-config">
@@ -135,7 +123,7 @@ export default class CustomStyleConfigRenderer extends React.Component<
             {isModalVisible && (
               <JSONEditor
                 schemaData={configSchema}
-                jsonData={editorValue}
+                jsonData={value}
                 onChange={this.handleEditorChange}
                 viewStyle={viewStyle || 'tabs'}
                 tabPosition="left"
@@ -148,3 +136,11 @@ export default class CustomStyleConfigRenderer extends React.Component<
     );
   }
 }
+
+/*
+// 通过 普通方式进行
+FormItem({
+  type: 'customStyleConfig',
+  detectProps: ['data'],
+})(CustomStyleConfigRenderer);
+*/

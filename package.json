@@ -1,6 +1,6 @@
 {
   "name": "neo-bi-cmps",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "neo BI 自定义组件（react&ts技术栈）",
   "framework": "react-ts",
   "keywords": [
@@ -41,9 +41,11 @@
     "antd": "^4.9.4",
     "lodash": "^4.17.21",
     "neo-open-api": "^1.1.9",
-    "@wibetter/json-editor": "^6.0.5"
+    "@wibetter/json-editor": "^6.0.5",
+    "tslib": "2.3.0"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.26.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^9.1.1",
     "@types/react": "^16.9.11",

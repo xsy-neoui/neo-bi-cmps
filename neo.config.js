@@ -122,7 +122,7 @@ module.exports = {
   build2lib: {
     entry: {
       targetNumber: './src/components/targetNumber__c/index.tsx',
-      targetNumberModel: './src/components/targetNumber__c/model.ts',
+      customStyleConfig: './src/components/targetNumber__c/customStyleConfig',
     },
     output: {
       filename: '[name].js',
@@ -133,7 +133,8 @@ module.exports = {
     assetsRoot: resolve('./lib'), // 打包后的文件绝对路径（物理路径）
     assetsPublicPath: '/', // 设置静态资源的引用路径（根域名+路径）
     assetsSubDirectory: '', // 资源引用二级路径
-    ignoreNodeModules: true,
+    ignoreNodeModules: false,
+    // allowList: ['@babel/runtime', '@babel/runtime/helpers/inheritsLoose'],
     productionSourceMap: false,
     productionGzip: false,
     productionGzipExtensions: ['js', 'css', 'json'],

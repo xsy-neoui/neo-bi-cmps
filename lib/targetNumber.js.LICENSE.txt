@@ -1,0 +1,9 @@
+/*!
+ * neo-bi-cmps v1.0.5
+ * author: wibetter
+ * build tool: AKFun
+ * build time: Thu Jan 29 2026 13:54:31 GMT+0800 (中国标准时间)
+ * build tool info: https://github.com/wibetter/akfun
+ */
+
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */
