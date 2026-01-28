@@ -119,4 +119,24 @@ module.exports = {
     assetsRoot: resolve('dist') // 上传指定目录下的脚本文件
     */
   },
+  build2lib: {
+    entry: {
+      targetNumber: './src/components/targetNumber__c/index.tsx',
+      targetNumberModel: './src/components/targetNumber__c/model.ts',
+    },
+    output: {
+      filename: '[name].js',
+    },
+    removeNeoCommonModules: true, // 是否移除 Neo 共享的依赖模块，默认不移除
+    NODE_ENV: 'production', // development、production
+    libraryName: 'NeoBIComponent', // 构建第三方功能包时最后导出的引用变量名
+    assetsRoot: resolve('./lib'), // 打包后的文件绝对路径（物理路径）
+    assetsPublicPath: '/', // 设置静态资源的引用路径（根域名+路径）
+    assetsSubDirectory: '', // 资源引用二级路径
+    ignoreNodeModules: true,
+    productionSourceMap: false,
+    productionGzip: false,
+    productionGzipExtensions: ['js', 'css', 'json'],
+    bundleAnalyzerReport: false,
+  },
 };
