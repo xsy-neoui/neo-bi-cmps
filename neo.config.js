@@ -51,28 +51,6 @@ module.exports = {
     // externals: ['xxModule'], // 自定义组件中需要剔除的模块，仅支持数组写法
   },
   */
-  preview: {
-    // 用于开启本地预览模式的相关配置信息
-    /*
-    【特别说明】以下配置项都自带默认值，非必填。如需自定义请自行配置。
-    entry: { // 根据 src/components 目录下的文件自动生成 entry 相关配置
-      // 本地预览自定义组件内容
-      index: './src/preview.jsx',
-    },
-    NODE_ENV: 'development',
-    port: 80, // 设置基础端口，如果被占用则自动寻找可用端口
-    assetsPublicPath: '/', // 设置静态资源的引用路径（根域名+路径）
-    assetsSubDirectory: '',
-    hostname: 'localhost',
-    proxyTable: {
-      '/apiTest': {
-        target: 'http://api-test.com.cn', // 不支持跨域的接口根地址
-        ws: true,
-        changeOrigin: true,
-      },
-    },
-    */
-  },
   linkDebug: {
     // 用于开启本地调试模式的相关配置信息
     /*

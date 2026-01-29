@@ -13,10 +13,10 @@ object-assign
 */
 
 /*!
- * neo-bi-cmps v1.0.5
+ * neo-bi-cmps v1.0.7
  * author: wibetter
  * build tool: AKFun
- * build time: Thu Jan 29 2026 13:54:31 GMT+0800 (中国标准时间)
+ * build time: Thu Jan 29 2026 19:38:15 GMT+0800 (中国标准时间)
  * build tool info: https://github.com/wibetter/akfun
  */
 

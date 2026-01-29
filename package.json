@@ -1,6 +1,6 @@
 {
   "name": "neo-bi-cmps",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "neo BI 自定义组件（react&ts技术栈）",
   "framework": "react-ts",
   "keywords": [
@@ -10,7 +10,6 @@
   "author": "wibetter",
   "license": "MIT",
   "scripts": {
-    "preview": "neo preview",
     "linkDebug": "neo linkDebug",
     "neoLogin": "neo login",
     "pushCmp": "neo push cmp",

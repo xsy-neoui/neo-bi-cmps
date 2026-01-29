@@ -18,7 +18,8 @@ export class TargetNumberModel {
   label: string = '数值指标';
 
   /** 组件描述，用于设置在编辑器左侧组件面板中展示的描述 */
-  description: string = '用于展示关键数值指标，支持从 XObject 实体对象获取动态数据，支持绑定多个字段进行展示';
+  description: string =
+    '用于展示关键数值指标，支持从 XObject 实体对象获取动态数据，支持绑定多个字段进行展示';
 
   /** 分类标签，用于设置在编辑器左侧组件面板哪个分类中展示  */
   // tags: string[] = ['自定义组件'];
@@ -75,18 +76,9 @@ export class TargetNumberModel {
         fontSize: 14,
         fontWeight: 400,
         color: '#8c8c8c',
-      }
-    }
-  };
-
-  // 当前组件支持的函数列表（其他组件可触发当前组件的函数）
-  functions = [
-    {
-      apiKey: 'loadData',
-      label: '刷新数据',
-      helpTextKey: '重新加载数值指标数据',
+      },
     },
-  ];
+  };
 
   /**
    * 组件属性配置模式
@@ -115,8 +107,8 @@ export class TargetNumberModel {
       name: 'targetNumberStyle',
       label: '自定义样式配置',
       viewStyle: 'tabs', // 'tabs'、'fold'
-      wideScreen: false // 是否开启宽屏展示模式
-    }
+      wideScreen: false, // 是否开启宽屏展示模式
+    },
   ];
 }
 

@@ -26,34 +26,22 @@
 $ npm i 或者 yarn
 ```
 
-2. **preview: 组件预览模式（带热更新）**
-> preview模式：用于预览自定义组件内容。
-```bash
-$ npm run preview
-```
-
-3. **linkDebug: 外链调试（在线上页面设计器端预览自定义组件）**
+2. **linkDebug: 外链调试（在线上页面设计器端预览自定义组件）**
 > linkDebug模式：用于在线上页面设计器中预览和调试自定义组件。
 ```bash
 $ npm run linkDebug
 ```
 
-4. **发布到 NeoCRM 平台**
+3. **发布到 NeoCRM 平台**
 > 需要确保 package.json 中的 name 值唯一，version 值不重复。
 ```bash
 $ npm run pushCmp
 ```
 
+### OAuth2 登录授权
+使用 `neo push cmp`、`neo pull cmp`、`neo delete cmp` 等命令与 NeoCRM 平台交互时，需要进行授权登录。
 
-### 🔐 授权配置
-
-使用 `neo push cmp`、`neo pull cmp`、`neo delete cmp` 等命令与 NeoCRM 平台交互时，需要配置授权信息。
-
-#### 方式一：OAuth2 登录授权（推荐）
-
-OAuth2 授权码模式更加安全可靠，无需用户配置账户名和密码。
-
-##### 使用步骤
+#### 使用步骤
 
 1. **登录 NeoCRM 平台**
    ```bash
@@ -73,7 +61,7 @@ OAuth2 授权码模式更加安全可靠，无需用户配置账户名和密码�
    
    功能：清除本地保存的 token 文件，下次使用需要重新登录。
 
-##### neo login 选择「自定义环境」时的授权配置示例
+#### neo login 选择「自定义环境」时的授权配置示例
 
 ```javascript
 // neo.config.js
@@ -87,14 +75,14 @@ module.exports = {
 }
 ```
 
-##### Token 有效期
+#### Token 有效期
 
 - **access_token**：默认有效期 2 小时
 - **refresh_token**：默认有效期 30 天
 - 系统会在 access_token 过期前 5 分钟自动刷新
 - 如果 refresh_token 也过期，需要重新执行 `neo login`
 
-##### 常见问题
+#### 常见问题
 
 **Q1: 浏览器无法自动打开怎么办？**  
 A: 命令行会输出授权 URL，手动复制到浏览器中打开即可。
@@ -104,50 +92,6 @@ A: 如果 refresh_token 也过期（默认 30 天），需要重新执行 `neo l
 
 **Q3: 授权登录后没有正常跳回 redirect_uri**  
 A: 可能被浏览器安装的插件影响，目前已知会影响授权登录的浏览器插件有：Neo UI Extension，请关闭插件后重试。
-
-#### 方式二：密码授权配置
-
-在项目根目录的 `neo.config.js` 文件中添加 NeoCRM 平台授权配置：
-
-```javascript
-module.exports = {
-  neoConfig: {
-    neoBaseURL: 'https://crm-cd.xiaoshouyi.com', // 平台根地址（默认：https://crm.xiaoshouyi.com）
-    tokenAPI: 'https://login-cd.xiaoshouyi.com/auc/oauth2/token', // Token 获取接口地址
-    // NeoCRM 授权配置
-    auth: {
-      client_id: 'xx', // 客户端 ID，从创建连接器的客户端信息中获取（Client_Id）
-      client_secret: 'xxx', // 客户端秘钥，从创建连接器的客户端信息中获取（Client_Secret）
-      username: 'xx', // 用户在销售易系统中的用户名
-      /**
-       * password 为 用户在销售易系统中的账号密码加上 8 位安全令牌。
-       * 例如，用户密码为 123456，安全令牌为 ABCDEFGH，则 password 的值应为 123456ABCDEFGH。
-       */
-      password: 'xx xx' // 用户账户密码 + 8 位安全令牌
-    },
-  },
-}
-```
-
-##### 授权配置获取方式
-
-1. **客户端 ID 和客户端秘钥**：需通过创建连接器获取
-   - 访问 [销售易文档中心](https://doc.xiaoshouyi.com) / 创建连接器
-   - 创建连接器后，从客户端信息中获取 `Client_Id` 和 `Client_Secret`
-
-2. **安全令牌**：如何获取安全令牌
-   - 访问 [销售易文档中心](https://doc.xiaoshouyi.com) / OAuth安全认证 / 密码模式 / 获取令牌
-   - 按照文档说明获取 8 位安全令牌
-   - `password` 字段 = 用户账户密码 + 8 位安全令牌（直接拼接，无空格或分隔符）
-
-#### OAuth2 模式 vs 密码模式
-
-| 特性 | OAuth2 授权码模式 | 密码模式 |
-|------|------------------|---------|
-| 安全性 | ✅ 高（无需在配置文件中存储密码） | ⚠️ 较低（需要配置密码和安全令牌） |
-| Token 刷新 | ✅ 自动刷新 | ✅ 自动刷新 |
-| 有效期 | 2 小时（可自动刷新） | 永不过期 |
-| 推荐程度 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
 
 ---
 
