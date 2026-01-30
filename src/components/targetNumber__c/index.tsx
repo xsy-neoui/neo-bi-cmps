@@ -6,6 +6,10 @@ import * as React from 'react';
 // @ts-ignore
 import { xObject } from 'neo-open-api'; // Neo Open API
 
+// 引入 neo-ui-common / NeoEvent
+// @ts-ignore
+import { NeoEvent } from 'neo-ui-common';
+
 import './style.scss';
 
 interface EntityApiKey {
@@ -196,6 +200,7 @@ export default class TargetNumber extends React.PureComponent<
    * 加载数据
    * 从 Neo 平台获取 XObject 实体数据，直接使用查询结果的第一条记录
    */
+  @NeoEvent.function
   async loadData() {
     const { entityApiKey, selectFieldDesc } = this.props;
     this.setState({ loading: true, error: null });
