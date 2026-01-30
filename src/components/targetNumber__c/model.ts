@@ -80,6 +80,15 @@ export class TargetNumberModel {
     },
   };
 
+  // 当前组件支持的函数列表（其他组件可触发当前组件的函数）
+  functions = [
+    {
+      apiKey: 'loadData',
+      label: '刷新BI看板数据',
+      helpTextKey: '刷新BI看板组件数据',
+    },
+  ];
+
   /**
    * 组件属性配置模式
    * 支持静态配置：propsSchema，优先级比 propsSchemaCreator 低

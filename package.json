@@ -1,6 +1,6 @@
 {
   "name": "neo-bi-cmps",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "neo BI 自定义组件（react&ts技术栈）",
   "framework": "react-ts",
   "keywords": [

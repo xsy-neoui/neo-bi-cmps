@@ -6,6 +6,10 @@ import * as React from 'react';
 // @ts-ignore
 import { xObject } from 'neo-open-api'; // Neo Open API
 
+// 引入 neo-ui-common / NeoEvent
+// @ts-ignore
+import { BaseCmp, StatusHoc, NeoEvent } from 'neo-ui-common';
+
 import './style.scss';
 
 interface EntityApiKey {
@@ -106,10 +110,7 @@ interface TargetNumberState {
  * 用于展示多个关键数值指标，支持从 XObject 实体对象获取动态数据
  * 每个字段都会显示为一个独立的数值块，包含字段标签和数值
  */
-export default class TargetNumber extends React.PureComponent<
-  TargetNumberProps,
-  TargetNumberState
-> {
+class TargetNumber extends BaseCmp<TargetNumberProps, TargetNumberState> {
   constructor(props: TargetNumberProps) {
     super(props);
 
@@ -196,6 +197,7 @@ export default class TargetNumber extends React.PureComponent<
    * 加载数据
    * 从 Neo 平台获取 XObject 实体数据，直接使用查询结果的第一条记录
    */
+  @NeoEvent.function
   async loadData() {
     const { entityApiKey, selectFieldDesc } = this.props;
     this.setState({ loading: true, error: null });
@@ -422,3 +424,6 @@ export default class TargetNumber extends React.PureComponent<
     );
   }
 }
+
+// 使用 StatusHoc 包裹组件，用于支持组件显示隐藏控制
+export default StatusHoc(TargetNumber);
