@@ -50,7 +50,7 @@
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.15",
     "@types/axios": "^0.14.0",
-    "neo-cmp-cli": "^1.10.13",
+    "neo-cmp-cli": "^1.10.18",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.9",
     "prettier": "^2.0.5"

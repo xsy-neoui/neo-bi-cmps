@@ -51,6 +51,7 @@ interface TargetNumberStyle {
     fontSize?: number;
     fontWeight?: number;
     color?: string;
+    backgroundColor?: string;
   };
   numberStyle?: {
     fontSize?: number;
@@ -133,6 +134,15 @@ class TargetNumber extends BaseCmp<TargetNumberProps, TargetNumberState> {
       // 加载数据
       this.loadData();
     }
+
+    // 监听一个广播事件
+    console.log('TargetNumber 注册了一个广播事件 SavePageEvent');
+    NeoEvent.listen('SavePageEvent', (eventData: any) => {
+      console.log(
+        'TargetNumber 监听到了一个广播事件 SavePageEvent: ',
+        eventData,
+      );
+    });
   }
 
   /**
@@ -347,6 +357,7 @@ class TargetNumber extends BaseCmp<TargetNumberProps, TargetNumberState> {
           : '24px',
       fontWeight: titleStyleConfig?.fontWeight ?? 400,
       color: titleStyleConfig?.color || '#000000',
+      backgroundColor: titleStyleConfig?.backgroundColor || '#eaf3fc',
     };
 
     // 渲染单个数值块
