@@ -1,5 +1,6 @@
 // 导入自定义配置项（用于对接复杂自定义配置）
-import './customStyleConfig';
+// import './customStyleConfig';
+
 /**
  * @file 数值指标组件对接编辑器的描述文件
  * @description 定义组件在 Neo 平台编辑器中的配置信息
@@ -61,11 +62,12 @@ export class TargetNumberModel {
         alignClass: 'flex-col',
       },
       titleStyle: {
-        show: false,
-        text: '',
-        fontSize: 24,
-        fontWeight: 400,
-        color: '#000',
+        show: true,
+        text: '>> 关键数据',
+        fontSize: 18,
+        fontWeight: 700,
+        color: '#333',
+        backgroundColor: '#eaf3fc',
       },
       numberStyle: {
         fontSize: 32,
@@ -79,6 +81,15 @@ export class TargetNumberModel {
       },
     },
   };
+
+  // 当前组件支持的函数列表（其他组件可触发当前组件的函数）
+  functions = [
+    {
+      apiKey: 'loadData',
+      label: '刷新BI看板数据',
+      helpTextKey: '刷新BI看板组件数据',
+    },
+  ];
 
   /**
    * 组件属性配置模式
@@ -102,6 +113,7 @@ export class TargetNumberModel {
       label: '绑定字段',
       placeholder: '请至少选择一个要显示的字段',
     },
+    /*
     {
       type: 'customStyleConfig',
       name: 'targetNumberStyle',
@@ -109,6 +121,7 @@ export class TargetNumberModel {
       viewStyle: 'tabs', // 'tabs'、'fold'
       wideScreen: false, // 是否开启宽屏展示模式
     },
+    */
   ];
 }
 

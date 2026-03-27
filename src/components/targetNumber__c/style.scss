@@ -1,15 +1,17 @@
 .targetNumber__c {
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 0 !important;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
 
   // 组件标题（根据 titleStyle.show 展示）
   .target-number-title {
-    margin-bottom: 12px;
     line-height: 1.4;
+    background-color: #eaf3fc;
+    padding: 8px 12px;
   }
 
   .target-number-block {
@@ -17,6 +19,7 @@
     align-items: center;
     justify-content: center;
     min-height: 60px;
+    padding: 8px;
 
     &.flex-col {
       flex-direction: column;
@@ -163,4 +166,8 @@
       font-size: 12px;
     }
   }
+}
+
+.target-number {
+  background-color: red;
 }

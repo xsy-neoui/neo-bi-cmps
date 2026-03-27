@@ -86,6 +86,7 @@ module.exports = {
   },
   pushCmp: {
     // 用于构建并发布至 NeoCRM 的相关配置
+    // 备注：pushCmp 会服用量 build2lib 中的配置，执行 neo push cmp 时最好注释掉 build2lib 中的配置。
     /*
     【特别说明】以下配置项都自带默认值，非必填。如需自定义请自行配置。
     NODE_ENV: 'production',
@@ -97,6 +98,7 @@ module.exports = {
     assetsRoot: resolve('dist') // 上传指定目录下的脚本文件
     */
   },
+  /*
   build2lib: {
     entry: {
       targetNumber: './src/components/targetNumber__c/index.tsx',
@@ -118,4 +120,5 @@ module.exports = {
     productionGzipExtensions: ['js', 'css', 'json'],
     bundleAnalyzerReport: false,
   },
+  */
 };

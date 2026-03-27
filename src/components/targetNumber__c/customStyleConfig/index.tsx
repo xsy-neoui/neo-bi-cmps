@@ -89,6 +89,8 @@ export default class CustomStyleConfigRenderer extends React.Component<
   render() {
     const { disabled, viewStyle, wideScreen, value } = this.props;
     const { isModalVisible } = this.state;
+    console.log('customStyleConfig:', this.props);
+    console.log('test1:', this.props.data['__NeoPageInfo']);
 
     return (
       <div className="properties-panel-custom-style-config">
